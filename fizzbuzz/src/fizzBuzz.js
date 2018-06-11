@@ -1,7 +1,25 @@
-Fizzbuzz = function(number) {
-  if (number == 3) {
-    return "fizz";
-  } else {
-    return "buzz";
-  }
-}
+var Fizzbuzz = function() {
+
+};
+
+Fizzbuzz.prototype.isDivisibleByThree = function (number) {
+  return this._isDivisibleBy(number, 3);
+};
+
+Fizzbuzz.prototype.isDivisibleByFive = function (number) {
+  return this._isDivisibleBy(number, 5);
+};
+
+Fizzbuzz.prototype.isDivisibleByFifteen = function (number) {
+  return this._isDivisibleBy(number, 15);
+};
+
+Fizzbuzz.prototype._isDivisibleBy = function(number, divisor) {
+  return (number % divisor === 0);
+};
+
+Fizzbuzz.prototype.says = function(number) {
+  if (this.isDivisibleByThree(number)) {
+    return "Fizz";
+  };
+};
